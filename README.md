@@ -4,7 +4,13 @@ High-speed encoder data acquisition system for the 30mm PCBMotor Traveling Wave 
 
 ## Overview
 
-This project collects positional data from the PCBMotor TWUM Driver's encoder sensor at microsecond intervals. The ESP32's dual-core architecture separates motor control and data collection (Core 1) from data transmission (Core 0) for reliable real-time sampling. Supports both interactive serial commands and autonomous PWM operation modes.
+This project collects positional data from the PCBMotor TWUM driver's encoder at 1kHz. The ESP32's dual-core architecture separates motor control and data collection (Core 1) from data transmission (Core 0) for reliable real-time sampling. The program supports both serial mode in which the user can send the PCBMotor ASCII commands to the driver or make the driver enter hardware mode which allows the ESP32 to drive the motor at a specified duty cycle for 5s. The output data can be used to construct speed plots such as the one shown below.
+
+<div align="center">
+
+![](images/TWUM_Speed_Response.svg)
+
+</div>
 
 ### Features
 
