@@ -1,6 +1,6 @@
 # PCBMotor TWUM Position Data Collector
 
-High-speed encoder data acquisition system for the 30mm PCBMotor TWUM, implemented on ESP32 with dual-core processing and queue-based buffering.
+High-speed encoder data acquisition system for the 30mm PCBMotor Traveling Wave Ultrasonic Motor (TWUM), implemented on ESP32 with dual-core processing and queue-based buffering.
 
 ## Overview
 
@@ -42,16 +42,3 @@ Position data is sampled at the configured rate and transmitted via Serial Monit
 - 32 sensor readings buffered before transmission
 - Collection stops when readings stabilize (4 identical buffers)
 - Binary data output for efficient transmission
-
-## Usage
-
-1. Configure operation mode and parameters
-2. Upload code to ESP32
-3. Open Serial Monitor (19200 baud)
-4. Wait for alignment confirmation
-5. **Serial mode**: Send commands via Serial Monitor
-6. **PWM mode**: Data collection starts automatically
-
-## License
-
-This project is licensed under the MIT License.
