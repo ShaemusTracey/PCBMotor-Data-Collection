@@ -4,7 +4,7 @@ High-speed encoder data acquisition system for the 30mm PCBMotor Traveling Wave 
 
 ## Overview
 
-This project collects positional data from the PCBMotor TWUM driver's encoder at 1kHz. The ESP32's dual-core architecture separates motor control and data collection (Core 1) from data transmission (Core 0) for reliable real-time sampling. The program supports both serial mode in which the user can send the PCBMotor ASCII commands to the driver or make the driver enter hardware mode which allows the ESP32 to drive the motor at a specified duty cycle for 5s. The output data can be used to construct speed plots such as the one shown below.
+This project collects positional data from the PCBMotor TWUM driver's encoder at 1kHz. The ESP32's dual-core architecture separates motor control and data collection (Core 1) from data transmission (Core 0) for reliable real-time sampling. The program supports both serial mode in which the user can send the PCBMotor ASCII commands to the driver, or make the driver enter hardware mode which allows the ESP32 to drive the motor at a specified duty cycle for a fixed period of time. The output data can be used to construct speed plots such as the one shown below.
 
 <div align="center">
 
@@ -17,7 +17,6 @@ This project collects positional data from the PCBMotor TWUM driver's encoder at
 - Dual-core architecture for control and data transmission separation
 - Configurable sample period (default: 1000μs)
 - Automatic motor alignment to sensor pulse edge
-- Queue-based buffering prevents data loss
 - Two operation modes: Serial command or PWM hardware control
 
 ## Pin Configuration
@@ -31,7 +30,7 @@ This project collects positional data from the PCBMotor TWUM driver's encoder at
 ## Operation Modes
 
 ### Serial Mode
-Interactive control through Serial Monitor. Motor responds to commands sent at 19200 baud, collects position data during operation, and returns to ready state after motion stops.
+Interactive control through Serial Monitor. Motor responds to custom ASCII commands sent at 19200 baud, collects position data during operation, and returns to ready state after motion stops.
 
 **To enable**: Set `serialCom = true`
 
